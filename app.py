@@ -1,6 +1,7 @@
 import streamlit as st
 import tensorflow as tf
 import numpy as np
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from PIL import Image
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
@@ -26,7 +27,8 @@ if uploaded_file is not None:
 
     # Preprocessing
     img = img.resize((IMG_HEIGHT, IMG_WIDTH))
-    img_array = np.array(img) / 255.0
+    img_array = np.array(img)
+    img_array = preprocess_input(img_array)  # << ini penting!
     img_array = np.expand_dims(img_array, axis=0)
 
     # Prediction
