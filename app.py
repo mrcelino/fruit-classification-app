@@ -7,7 +7,7 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 # Load Model
-model = tf.keras.models.load_model("fruit_model.keras")
+model = tf.keras.models.load_model("fruit_class.keras")
 
 # Load label
 with open("label.txt", "r") as f:
