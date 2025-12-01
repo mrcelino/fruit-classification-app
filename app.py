@@ -16,7 +16,7 @@ with open("label.txt", "r") as f:
 IMG_HEIGHT = 224
 IMG_WIDTH = 224
 
-st.title("🍉 Fruit Classification - Transfer Learning App")
+st.title("🍉 Fruit Classification")
 st.write("Upload gambar buah dan sistem akan mengklasifikasikannya.")
 
 uploaded_file = st.file_uploader("Upload gambar...", type=["jpg", "jpeg", "png"])
@@ -28,7 +28,7 @@ if uploaded_file is not None:
     # Preprocessing
     img = img.resize((IMG_HEIGHT, IMG_WIDTH))
     img_array = np.array(img)
-    img_array = preprocess_input(img_array)  # << ini penting!
+    img_array = preprocess_input(img_array)
     img_array = np.expand_dims(img_array, axis=0)
 
     # Prediction
