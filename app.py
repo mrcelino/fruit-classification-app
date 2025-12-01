@@ -13,8 +13,8 @@ model = tf.keras.models.load_model("fruit_model.keras")
 with open("label.txt", "r") as f:
     class_names = [line.strip() for line in f.readlines()]
 
-IMG_HEIGHT = 100
-IMG_WIDTH = 100
+IMG_HEIGHT = 224
+IMG_WIDTH = 224
 
 st.title("🍉 Fruit Classification - Transfer Learning App")
 st.write("Upload gambar buah dan sistem akan mengklasifikasikannya.")
