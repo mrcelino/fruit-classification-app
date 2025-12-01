@@ -1,7 +1,7 @@
-import streamlit as st
-import tensorflow as tf
+import streamlit as st # type: ignore
+import tensorflow as tf # type: ignore
 import numpy as np
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input # type: ignore
 from PIL import Image
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
